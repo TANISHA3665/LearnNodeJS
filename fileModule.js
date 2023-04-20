@@ -2,7 +2,7 @@ const { log } = require("console");
 const fs = require("fs");
 
 
-//Read
+// 1. Read
 // fs.readFile("./abc.txt", (error, data) =>
 // {
 //     if (error)
@@ -18,7 +18,7 @@ const fs = require("fs");
 
 // console.log("--------------------------------");
 
-// writeFile
+// 2. writeFile
 
 // a) File doesn't exist -> creates a new file and adds the content
 // b) File exists -> deletes the old content and adds the new content
@@ -37,7 +37,7 @@ const fs = require("fs");
 //     }
 // });
 
-// appendFile
+// 3. appendFile
 
 // a) File doesn't exist -> creates a new file and adds the content
 // b) File exists -> adds the new content at the end of the file
@@ -51,12 +51,20 @@ const fs = require("fs");
 //     else console.log("saved content");
 // });
 
-//delete File => unlink()
+//4. delete File => unlink()
 
 // deletes the file
 
-fs.unlink("abc.txt", (err) =>
+// fs.unlink("abc.txt", (err) =>
+// {
+//     if (err) throw err;
+//     else console.log("file deleted");
+// });
+
+// 5. rename file
+
+fs.rename("newFile.txt", "renamedFile.txt", (err) =>
 {
     if (err) throw err;
-    else console.log("file deleted");
-});
+    else console.log("file renamed");
+})
