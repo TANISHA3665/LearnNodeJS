@@ -43,10 +43,20 @@ const fs = require("fs");
 // b) File exists -> adds the new content at the end of the file
 
 
-let newContent = "This is the content I want to add";
+// let newContent = "This is the content I want to add";
 
-fs.appendFile("./newFile.txt", newContent, (err) =>
+// fs.appendFile("./newFile.txt", newContent, (err) =>
+// {
+//     if (err) throw err;
+//     else console.log("saved content");
+// });
+
+//delete File => unlink()
+
+// deletes the file
+
+fs.unlink("abc.txt", (err) =>
 {
     if (err) throw err;
-    else console.log("saved content");
+    else console.log("file deleted");
 });
