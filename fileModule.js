@@ -1,6 +1,5 @@
-const { log } = require("console");
-const fs = require("fs");
-
+const { log } = require('console')
+const fs = require('fs')
 
 // 1. Read
 // fs.readFile("./abc.txt", (error, data) =>
@@ -42,7 +41,6 @@ const fs = require("fs");
 // a) File doesn't exist -> creates a new file and adds the content
 // b) File exists -> adds the new content at the end of the file
 
-
 // let newContent = "This is the content I want to add";
 
 // fs.appendFile("./newFile.txt", newContent, (err) =>
@@ -63,8 +61,7 @@ const fs = require("fs");
 
 // 5. rename file
 
-fs.rename("newFile.txt", "renamedFile.txt", (err) =>
-{
-    if (err) throw err;
-    else console.log("file renamed");
+fs.rename('newFile.txt', 'renamedFile.txt', (err) => {
+  if (err) throw err
+  else console.log('file renamed')
 })
