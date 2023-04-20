@@ -23,16 +23,30 @@ const fs = require("fs");
 // a) File doesn't exist -> creates a new file and adds the content
 // b) File exists -> deletes the old content and adds the new content
 
-let content = "This is a new dynamic content";
+// let content = "This is a new dynamic content";
 
-fs.writeFile("newFile.txt", content, (err) =>
+// fs.writeFile("newFile.txt", content, (err) =>
+// {
+//     if (err)
+//     {
+//         console.log(err);
+//     }
+//     else
+//     {
+//         console.log("saved content");
+//     }
+// });
+
+// appendFile
+
+// a) File doesn't exist -> creates a new file and adds the content
+// b) File exists -> adds the new content at the end of the file
+
+
+let newContent = "This is the content I want to add";
+
+fs.appendFile("./newFile.txt", newContent, (err) =>
 {
-    if (err)
-    {
-        console.log(err);
-    }
-    else
-    {
-        console.log("saved content");
-    }
-})
+    if (err) throw err;
+    else console.log("saved content");
+});
